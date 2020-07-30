@@ -28,8 +28,9 @@ h3 {
 header {
     text-align: center;
 }
-header h2 {
+header h2 a {
     color: #B200FF;
+    text-decoration: none;
 }
 
 main {
