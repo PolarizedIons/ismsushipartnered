@@ -17,17 +17,16 @@ body {
 
 h1 {
     font-size: 3.5rem;
-    margin: 2rem 0;
+    margin: 0;
 }
 h2 {
     font-size: 6rem;
-    margin: 1rem 0;
+    margin: 0;
 }
 
 header {
-    margin: 4rem 8rem;
-    padding: 1rem 2rem;
-    background: #1e1e1e;
+    text-align: center;
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,17 +34,18 @@ header {
     text-align: center;
 }
 
+header .banner img {
+    max-width: 100%;
+}
+
 header .question {
+    padding: 1rem 4rem;
+    background: #323232;
+    margin-top: -7.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-}
-
-header .question img {
-    flex-shrink: 0;
-    width: 64px;
-    height: 64px;
+    gap: 2rem;
 }
 
 header a {
@@ -57,27 +57,13 @@ header a:hover {
     opacity: 0.7;
 }
 
-header::after {
-    content: "";
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-color: #2b2b2b transparent transparent transparent;
-    border-width: 64px 32px 0 0;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    transform: translateX(100%);
-}
-
-
 main {
     display: flex;
     justify-content: space-around;
     align-items: center;
     min-height: 40vh;
     gap: 8rem;
-    padding: 2rem;
+    padding: 4rem;
 }
 
 main iframe {
@@ -89,36 +75,6 @@ main iframe {
     height: 100%;
 }
 
-main .profile {
-    flex-shrink: 0;
-    border-radius: 100%;
-    background: #b200ff;
-    width: 16rem;
-    height: 16rem;
-    border: 0 solid #0e0e0e;
-    transition: border 200ms ease-in-out;
-    position: relative;
-}
-
-main .profile:hover {
-    border-width: 2rem;
-}
-
-main .profile::after {
-    content: "msushi"; 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-40%);
-    font-size: 3rem;
-    opacity: 0;
-    transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
-}
-
-main .profile:hover::after {
-    opacity: 1;
-    transform: translateX(-50%) translateY(-50%);
-}
 
 @media (max-width: 1500px) {
     main {
@@ -131,14 +87,28 @@ main .profile:hover::after {
     body {
         font-size: 12px;
     }
-
-    main .profile {
-        order: 3;
-    }
 }
 
 @media (max-width: 500px) {
-    header {
-        margin: 4rem 4rem;
+    h1 {
+        font-size: 2rem;
+        margin: 0;
+    }
+    h2 {
+        font-size: 3rem;
+        margin: 0;
+    }
+
+    header .question {
+        margin-top: -4rem;
+    }
+
+    header .banner img {
+        max-width: 150%;
+        margin-left: -25%;
+    }
+
+    header .banner {
+        overflow: hidden;
     }
 }
